@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "Watercooler",
+  "description": "A Notifier For Watercooler",
+  "version": "1.0",
+
+  "permissions": [
+    "http://*/",
+    "notifications",
+    "alarms",
+    "tabs",
+    "webNavigation"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_icon": "logo-full.png"
+  }
+}
