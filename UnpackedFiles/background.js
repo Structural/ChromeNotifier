@@ -7,9 +7,10 @@ var i = 0;
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
         if (xhr.status >= 500 && xhr.status < 600){
+            chrome.browserAction.setIcon({path: "logo-red.png"});
             chrome.browserAction.setBadgeBackgroundColor({
                 color: "#B22222"
-            })
+            });
             chrome.browserAction.setBadgeText({
                 text: "!!!!"
             });
@@ -24,13 +25,22 @@ var i = 0;
             {
                 txt = txt + resp[x]["unread_conversations"].length;
             }
-            //Badge Background color is set to black
-            chrome.browserAction.setBadgeBackgroundColor({
-                color: "#000"
-            })
-            chrome.browserAction.setBadgeText({
-                text: txt.toString()
-            });
+            if(txt>0){
+                chrome.browserAction.setIcon({path: "logo-full.png"});
+                //Badge Background color is set to black
+                chrome.browserAction.setBadgeBackgroundColor({
+                    color: "#000"
+                })
+                chrome.browserAction.setBadgeText({
+                    text: txt.toString()
+                });
+            }
+            else{
+                chrome.browserAction.setIcon({path: "logo-empty.png"});
+                chrome.browserAction.setBadgeText({
+                    text: ""
+                });
+            }
         }
       }
     }
