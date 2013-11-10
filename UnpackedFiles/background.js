@@ -3,10 +3,11 @@ var i = 0;
 (function updateCounter() {
     //Counter Incremented
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", getWatercoolrUrl() + "api/v0/topics.json", true);
+    xhr.open("GET", getWatercoolrUrl() + "api/v0/folders.json", true);
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
-        if (xhr.status >= 500 && xhr.status < 600){
+
+        if (xhr.status >= 300){
             chrome.browserAction.setIcon({path: "logo-red.png"});
             chrome.browserAction.setBadgeBackgroundColor({
                 color: "#B22222"
@@ -15,7 +16,7 @@ var i = 0;
                 text: "!!!!"
             });
         }
-        else if (xhr.status >= 200 && xhr.status < 300){
+        else if (xhr.status >= 200){
 
             // JSON.parse does not evaluate the attacker's scripts.
             var resp = JSON.parse(xhr.responseText);
