@@ -3,7 +3,7 @@ var i = 0;
 (function updateCounter() {
     //Counter Incremented
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", getWatercoolrUrl() + "api/v0/folders.json", true);
+    xhr.open("GET", getWatercoolrUrl() + "api/v0/conversations/unread_count.json", true);
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
 
@@ -19,21 +19,16 @@ var i = 0;
         else if (xhr.status >= 200){
 
             // JSON.parse does not evaluate the attacker's scripts.
-            var resp = JSON.parse(xhr.responseText);
-            var txt = 0;
-            //Counter is set to Badge
-            for (x in resp)
-            {
-                txt = txt + resp[x]["unread_conversations"].length;
-            }
-            if(txt>0){
+            var resp = parseInt(xhr.responseText);
+           
+            if(resp>0){
                 chrome.browserAction.setIcon({path: "logo-full.png"});
                 //Badge Background color is set to black
                 chrome.browserAction.setBadgeBackgroundColor({
                     color: "#000"
                 })
                 chrome.browserAction.setBadgeText({
-                    text: txt.toString()
+                    text: resp.toString()
                 });
             }
             else{
@@ -49,7 +44,7 @@ var i = 0;
 
     
     //Used timeout with same interval
-    setTimeout(updateCounter, 2000);
+    setTimeout(updateCounter, 60000);
 })();
 
 
