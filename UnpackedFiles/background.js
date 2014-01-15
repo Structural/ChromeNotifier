@@ -8,12 +8,11 @@ var i = 0;
       if (xhr.readyState == 4) {
 
         if (xhr.status >= 300){
-            chrome.browserAction.setIcon({path: "logo-red.png"});
             chrome.browserAction.setBadgeBackgroundColor({
                 color: "#B22222"
             });
             chrome.browserAction.setBadgeText({
-                text: "!!!!"
+                text: "!"
             });
         }
         else if (xhr.status >= 200){
@@ -22,7 +21,6 @@ var i = 0;
             var resp = parseInt(xhr.responseText);
            
             if(resp>0){
-                chrome.browserAction.setIcon({path: "logo-full.png"});
                 //Badge Background color is set to black
                 chrome.browserAction.setBadgeBackgroundColor({
                     color: "#000"
@@ -32,7 +30,6 @@ var i = 0;
                 });
             }
             else{
-                chrome.browserAction.setIcon({path: "logo-empty.png"});
                 chrome.browserAction.setBadgeText({
                     text: ""
                 });
