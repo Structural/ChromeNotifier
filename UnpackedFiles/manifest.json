@@ -3,7 +3,7 @@
 
   "name": "Watercooler",
   "description": "A Notifier For Watercooler",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "icons": { "16": "logo-full.png",
            "48": "logo-full.png",
           "128": "logo-full.png" },
