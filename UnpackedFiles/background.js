@@ -46,7 +46,7 @@ var i = 0;
 
 
 function getWatercoolrUrl() {
-  return "http://watercoolr.io/";
+  return "http://watercooler.io/";
 }
 
 function isWatercoolrUrl(url) {
