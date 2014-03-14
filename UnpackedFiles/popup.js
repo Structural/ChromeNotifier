@@ -22,7 +22,7 @@ WC.run = function(){
     WC.xmlhttp.onreadystatechange = WC.ajaxReurn;
     WC.xmlhttp.open("GET", getWatercoolrUrl() + "api/v0/conversations/unread.json", true);
     WC.xmlhttp.send();
-    document.getElementById("footer").addEventListener("click",function(){goToInbox();});
+    document.getElementById("home-link").addEventListener("click",function(){goToInbox();});
 };
 
 WC.convoClick = function(e){

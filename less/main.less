@@ -6,12 +6,12 @@
 .chrome-popover{
   min-width:20rem;
   max-width:50rem;
-  min-height:20rem;
-  max-height: 50rem;
+  min-height:12rem;
+  max-height: 40rem;
   position:relative;
   padding:0;
   margin:0;
-  margin:0.25rem;
+  margin:0.35rem;
   border:@border-1;
   cursor:default;
 }
@@ -31,6 +31,10 @@
   font-weight: bold;
   text-shadow:0 1px 1px rgba(0,0,0,0.2);
 }
+
+#home-link{
+  cursor:pointer;
+}
 /* Styles */
 
 #conversations-list {
@@ -42,7 +46,6 @@
   overflow-y: auto;
   background-color: white;
   .abs-fill();
-  bottom:2.0rem;
   top:2.5rem;
 }
 
@@ -72,25 +75,4 @@
   font-size:0.8rem;
   min-height: 0.8rem;
   .ellipsis();
-}
-
-
-
-.footer{
-  text-align: center;
-  background-color:@bg-1;
-  border-top:@border-1;
-  padding:0.5rem;
-  height:2.0rem;
-  line-height: 1.0;
-  .abs-bottom();
-}
-
-.link-home{
-  cursor:pointer;
-  text-decoration: none;
-  color:@wc-blue;
-  &:hover{
-    color:#28D;
-  }
 }
