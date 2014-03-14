@@ -1,100 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <style>
-        /* btn-faint is a modifer on buttons for how much the button is show when it is not being hovered */
-/* Media Query Stuff */
-/* btn-faint is a modifer on buttons for how much the button is show when it is not being hovered */
-/* Media Query Stuff */
-.hidden {
-  display: none !important;
-}
-.clearfix {
-  *zoom: 1;
-}
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-.clearfix:after {
-  clear: both;
-}
-.pull-right {
-  float: right;
-}
-.pull-left {
-  float: left;
-}
-.border-bottom {
-  border-bottom: 1px solid #b3b3b3;
-}
-.border-top {
-  border-top: 1px solid #b3b3b3;
-}
-.border-right {
-  border-right: 1px solid #b3b3b3;
-}
-.border-left {
-  border-left: 1px solid #b3b3b3;
-}
 
-/* Search Results */
-.conversations {
-  padding: 0.35rem;
-  padding-top: 0;
-  max-width:300px; 
-}
-.conversations-list {
-  margin: 0;
-  padding: 0;
-  max-height: 30rem;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background-color: white;
-}
-.conversation {
-  padding: 0.25rem;
-  cursor: pointer;
-}
-.conversation:hover {
-  background-color: #FAFAFA;
-}
-.conversation-title {
-  font-family: Oswald, sans-serif;
-  font-size: 1rem;
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  word-wrap: break;
-  font-size: 0.9rem;
-}
-.footer{
-  text-align: center;
-  color:white;
-  background-color:#80a0c0;
-  bottom: 0px; 
-  cursor: pointer;
-  font-size: 20px;
-  padding: 10px 30px;
-  min-width: 200px;
-}
-        </style>
-    </head>
-    <body>
+<head>
+  <meta charset="utf-8">
+  <link href="popup.css" rel="stylesheet" type="text/css">
+</head>
 
-<div class="conversations">
-  <ul class="conversations-list" id="conversations-list">
-  </ul>
+<body>
 
-</div>
-<div class="footer" id="footer" onclick="goToInbox">
-  Go to Watercooler
-</div>
-    </body>
-     <script src="application.js"></script>
-      <script src="popup.js"></script>
+  <div class="conversations">
+    <ul id="conversations-list">
+    </ul>
+  </div>
+
+  <div class="footer" id="footer" onclick="goToInbox">
+    <span class="link-home">Inbox</span>
+  </div>
+</body>
+
+<script src="application.js"></script>
+<script src="popup.js"></script>
 </html>

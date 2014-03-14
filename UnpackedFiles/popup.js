@@ -25,7 +25,7 @@ WC.run = function(){
 };
 
 WC.convoClick = function(e){
-    goToInbox(e.target.parentElement.attributes.convoUrl.value);   
+    goToInbox(e.target.parentElement.attributes.convoUrl.value);
 };
 
 WC.ajaxReurn = function(){
@@ -45,12 +45,6 @@ WC.ajaxReurn = function(){
         }
     }
 };
-
-
-
-
-
-
 
 
 
