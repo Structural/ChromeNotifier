@@ -1,38 +1,96 @@
-.conversations {
-  padding: 0.35rem;
-  padding-top: 0;
-  max-width:300px;
+@wc-blue:#80A0C0;
+
+
+/* Layout */
+
+.chrome-popover{
+  min-width:20rem;
+  max-width:50rem;
+  min-height:20rem;
+  max-height: 50rem;
+  position:relative;
+  padding:0;
+  margin:0;
+  margin:0.25rem;
+  border:@border-1;
+  cursor:default;
 }
 
+.chrome-popover-toolbar{
+  text-align: center;
+  padding:0.625rem;
+  background-color: @bg-1;
+  border-bottom:@border-1;
+  height: 2.5rem;
+  line-height: 1.0;
+  font-size:1.25rem;
+}
+
+.chrome-popover-title{
+  color:@wc-blue;
+  font-weight: bold;
+  text-shadow:0 1px 1px rgba(0,0,0,0.2);
+}
+/* Styles */
+
 #conversations-list {
-  margin: 0;
-  padding: 0;
+  padding:0;
+  margin:0;
+  list-style-type: none;
   max-height: 30rem;
   overflow-x: hidden;
   overflow-y: auto;
   background-color: white;
+  .abs-fill();
+  bottom:2.0rem;
+  top:2.5rem;
 }
+
 .conversation {
-  padding: 0.25rem;
+  list-style-type: none;
   cursor: pointer;
-}
-.conversation:hover {
-  background-color: #FAFAFA;
+  border-bottom:@border-1;
+  padding:0.25rem;
+  margin-bottom:1px;
+  position:relative;
+  background-color: white;
+  transition:background-color 0.1s;
+  &:hover {
+    background-color:#FAFAFA;
+  }
 }
 .conversation-title {
   font-family: Oswald, sans-serif;
-  font-size: 1rem;
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  word-wrap: break;
-  font-size: 0.9rem;
+  color:#444;
+  font-size: 1.0rem;
+  margin-bottom:0.25rem;
+  .ellipsis();
 }
+
+.conversation-participants{
+  color:#AAA;
+  font-size:0.8rem;
+  min-height: 0.8rem;
+  .ellipsis();
+}
+
+
+
 .footer{
   text-align: center;
+  background-color:@bg-1;
+  border-top:@border-1;
+  padding:0.5rem;
+  height:2.0rem;
+  line-height: 1.0;
+  .abs-bottom();
 }
 
 .link-home{
-  .link-blue();
+  cursor:pointer;
+  text-decoration: none;
+  color:@wc-blue;
+  &:hover{
+    color:#28D;
+  }
 }

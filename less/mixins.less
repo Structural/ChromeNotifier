@@ -8,19 +8,6 @@
   font-size:@size;
 }
 
-.pop-over(){
-  z-index: 10;
-}
-
-.no-selection(){
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
 .ellipsis(){
   display:block;
   overflow: hidden;
@@ -59,21 +46,9 @@ background-image: linear-gradient(to right, @left-color 0%, @right-color @right-
     display:none !important;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 // Clearfix
-// --------
-// For clearing floats like a boss h5bp.com/q
-.clearfix{
+
+.clearfix(){
   *zoom: 1;
   &:before,
   &:after {
@@ -88,192 +63,38 @@ background-image: linear-gradient(to right, @left-color 0%, @right-color @right-
   }
 }
 
-.pull-right {
+.pull-right(){
   float: right;
 }
 
-.pull-left {
+.pull-left(){
   float: left;
 }
 
-// Drop shadows
-.box-shadow(@shadow) {
-  -webkit-box-shadow: @shadow;
-     -moz-box-shadow: @shadow;
-          box-shadow: @shadow;
+.abs-fill(){
+  position:absolute;
+  bottom:0;
+  right:0;
+  left:0;
+  top:0;
+}
+.abs-bottom(){
+  .abs-fill();
+  top:auto;
+}
+.abs-right(){
+  .abs-fill();
+  left:auto;
+}
+.abs-left(){
+  .abs-fill();
+  right:auto;
+}
+.abs-top(){
+  .abs-fill();
+  bottom:auto;
 }
 
-.button-shadow(@transparency: 0.2){
-  box-shadow:0 .2rem .2rem -.2rem rgba(0,0,0,@transparency);
-}
-
-// Box sizing
-.box-sizing(@boxmodel) {
-  -webkit-box-sizing: @boxmodel;
-     -moz-box-sizing: @boxmodel;
-          box-sizing: @boxmodel;
-}
-
-// User select
-// For selecting text on the page
-.user-select(@select) {
-  -webkit-user-select: @select;
-     -moz-user-select: @select;
-      -ms-user-select: @select;
-       -o-user-select: @select;
-          user-select: @select;
-}
-
-@border:1px solid @borderColor;
-
-.border-bottom{border-bottom: @border;}
-.border-top{border-top: @border;}
-.border-right{border-right: @border;}
-.border-left{border-left: @border;}
-
-// CSS3 PROPERTIES
-// --------------------------------------------------
-
-// Border Radius
-.border-radius(@radius) {
-  -webkit-border-radius: @radius;
-     -moz-border-radius: @radius;
-          border-radius: @radius;
-}
-
-// Single Corner Border Radius
-.border-top-left-radius(@radius) {
-  -webkit-border-top-left-radius: @radius;
-      -moz-border-radius-topleft: @radius;
-          border-top-left-radius: @radius;
-}
-.border-top-right-radius(@radius) {
-  -webkit-border-top-right-radius: @radius;
-      -moz-border-radius-topright: @radius;
-          border-top-right-radius: @radius;
-}
-.border-bottom-right-radius(@radius) {
-  -webkit-border-bottom-right-radius: @radius;
-      -moz-border-radius-bottomright: @radius;
-          border-bottom-right-radius: @radius;
-}
-.border-bottom-left-radius(@radius) {
-  -webkit-border-bottom-left-radius: @radius;
-      -moz-border-radius-bottomleft: @radius;
-          border-bottom-left-radius: @radius;
-}
-
-// Single Side Border Radius
-.border-top-radius(@radius) {
-  .border-top-right-radius(@radius);
-  .border-top-left-radius(@radius);
-}
-.border-right-radius(@radius) {
-  .border-top-right-radius(@radius);
-  .border-bottom-right-radius(@radius);
-}
-.border-bottom-radius(@radius) {
-  .border-bottom-right-radius(@radius);
-  .border-bottom-left-radius(@radius);
-}
-.border-left-radius(@radius) {
-  .border-top-left-radius(@radius);
-  .border-bottom-left-radius(@radius);
-}
-
-
-
-
-
-
-
-
-// IE7 inline-block
-// ----------------
-.ie7-inline-block() {
-  *display: inline; /* IE7 inline-block hack */
-  *zoom: 1;
-}
-
-// IE7 likes to collapse whitespace on either side of the inline-block elements.
-// Ems because we're attempting to match the width of a space character. Left
-// version is for form buttons, which typically come after other elements, and
-// right version is for icons, which come before. Applying both is ok, but it will
-// mean that space between those elements will be .6em (~2 space characters) in IE7,
-// instead of the 1 space in other browsers.
-.ie7-restore-left-whitespace() {
-  *margin-left: .3em;
-
-  &:first-child {
-    *margin-left: 0;
-  }
-}
-
-.ie7-restore-right-whitespace() {
-  *margin-right: .3em;
-}
-
-
-
-
-
-.text-gray-dark(){
-  color:rgba(0,0,0,0.3);
-}
-
-.text-black(){
-  color:#444;
-}
-
-
-
-// Counts
-
-@count-bg-color:rgba(128,128,128,0.30);
-@count-border-color:darken(@count-bg-color,3%);
-@count-color:white;
-
-.count(){
-  box-sizing:border-box;
-  color:@count-color;
-  border:1px solid @count-border-color;
-  border-top-color:darken(@count-border-color,10%);
-  background-color: @count-bg-color;
-  border-radius:1px;
-  text-shadow:0 1px 1px rgba(0,0,0,0.25);
-}
-
-.stripey-table() {
-  border-width:0;
-  border-collapse: collapse;
-  table-layout: fixed;
-  thead{
-    td{
-    font-weight: bold;
-    font-size:0.75rem;
-    color:#888;
-    background-color:@bg-1;
-    border-bottom:@border-1;
-    padding:0.25rem 0.5rem;
-    }
-  }
-
-  tbody {
-    tr {
-       &:nth-child(2n) {
-        background-color: #FAFAFA;
-      }
-    }
-    td {
-      min-width: 10em;
-      padding:0.5rem;
-      border-bottom:1px solid #F4F4F4;
-    }
-    tr:last-child td{
-        border-bottom:none;
-    }
-  }
-}
 
 .link-blue(){
   text-decoration: none;

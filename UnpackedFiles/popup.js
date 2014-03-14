@@ -7,10 +7,11 @@ WC.renderConversatiom = function(conversation){
     retVal += " id='conversation-" + conversation.id + "'"
     retVal += " convoUrl='" + "conversation/" + encodeURIComponent(conversation.title) + "/" + conversation.id + "'"
     retVal += ">"
-    retVal += "<span class='conversation-title'>"
+    retVal += "<div class='conversation-title'>"
     retVal += conversation.title
-    retVal += "</span>"
-    retVal += "</li>"
+    retVal += "</div><div class='conversation-participants'>"
+    retVal += "Participants"
+    retVal += "</div></li>"
 
     return retVal;
 };
