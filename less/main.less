@@ -7,12 +7,11 @@
   min-width:20rem;
   max-width:50rem;
   min-height:12rem;
-  max-height: 40rem;
+  max-height: 60rem;
   position:relative;
   padding:0;
   margin:0;
-  margin:0.35rem;
-  border:@border-1;
+  //border:@border-1;
   cursor:default;
   border-radius: 2px;
 }
@@ -20,13 +19,15 @@
 .chrome-popover-toolbar{
   text-align: center;
   padding:0.625rem;
-  background-color: @bg-1;
   border-bottom:@border-1;
   height: 2.5rem;
   line-height: 1.0;
   font-size:1.25rem;
+  //background-color: @wc-blue;
+  background-color: white;
 }
 .chrome-popover-title{
+  //color:white;
   color:@wc-blue;
   font-weight: bold;
   text-shadow:0 1px 1px rgba(0,0,0,0.2);
@@ -57,6 +58,7 @@
   text-align: center;
   padding-top:2.0rem;
   color:#AAA;
+  user-select:none;
   .info-message-icon{
     font-size:2.0rem;
   }
@@ -106,4 +108,12 @@
   font-size:0.8rem;
   min-height: 0.8rem;
   .ellipsis();
+  .conversation-participant{
+    &:after{
+      content:", ";
+    }
+    &:last-child:after{
+      content:"";
+    }
+  }
 }
