@@ -42,6 +42,7 @@ WC.ajaxReurn = function(){
     if (WC.xmlhttp.readyState==4)
     {
         WC.hideAllElements();
+        WC.refreshCounter();
         if(WC.xmlhttp.status==200){
             var convoData = JSON.parse(WC.xmlhttp.response);
             if(convoData.length > 0)
@@ -65,7 +66,6 @@ WC.ajaxReurn = function(){
                 //no unread convos
                 WC.showElement("conversations-empty");
             }
-            WC.refreshCounter();
         }
         else if(WC.xmlhttp.status==401)
         {
