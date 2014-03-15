@@ -26,6 +26,8 @@ WC.renderConversatiom = function(conversation){
 WC.xmlhttp = new XMLHttpRequest();
 
 WC.run = function(){
+    WC.hideAllElements();
+    WC.showElement("conversations-loading");
     WC.xmlhttp.onreadystatechange = WC.ajaxReurn;
     WC.xmlhttp.open("GET", getWatercoolrUrl() + "api/v0/conversations/unread.json", true);
     WC.xmlhttp.send();
@@ -39,12 +41,13 @@ WC.convoClick = function(e){
 WC.ajaxReurn = function(){
     if (WC.xmlhttp.readyState==4)
     {
-        document.getElementById("conversations-error").classList.remove("is-visible")
+        WC.hideAllElements();
         if(WC.xmlhttp.status==200){
             var convoData = JSON.parse(WC.xmlhttp.response);
             if(convoData.length > 0)
             {
                 //unread convos
+                WC.showElement("conversations");
                 rendered_convos = "";
                 for(conversation in convoData)
                 {
@@ -60,15 +63,31 @@ WC.ajaxReurn = function(){
             if(convoData.length == 0)
             {
                 //no unread convos
+                WC.showElement("conversations-empty");
             }
         }
         else if(WC.xmlhttp.status==401)
         {
             // need to log in.
+            WC.showElement("conversations-login");
+        }
+        else
+        {
+            WC.showElement("conversations-error");
         }
     }
 };
 
+WC.hideAllElements = function(){
+    var ids = ["conversations","conversations-loading","conversations-error","conversations-empty","conversations-login"];
+    for(id in ids){
+        document.getElementById(ids[id]).classList.remove("is-visible");
+    }
+}
+
+WC.showElement = function(elementID){
+    document.getElementById(elementID).classList.add("is-visible");
+}
 
 
 
