@@ -1,5 +1,5 @@
 
-var WC = {};
+
 
 WC.renderConversatiom = function(conversation){
     retVal = ""
@@ -29,13 +29,13 @@ WC.run = function(){
     WC.hideAllElements();
     WC.showElement("conversations-loading");
     WC.xmlhttp.onreadystatechange = WC.ajaxReurn;
-    WC.xmlhttp.open("GET", getWatercoolrUrl() + "api/v0/conversations/unread.json", true);
+    WC.xmlhttp.open("GET", WC.getWatercoolrUrl() + "api/v0/conversations/unread.json", true);
     WC.xmlhttp.send();
-    document.getElementById("home-link").addEventListener("click",function(){goToInbox();});
+    document.getElementById("home-link").addEventListener("click",function(){WC.goToInbox();});
 };
 
 WC.convoClick = function(e){
-    goToInbox(e.target.parentElement.attributes.convoUrl.value);
+    WC.goToInbox(e.target.parentElement.attributes.convoUrl.value);
 };
 
 WC.ajaxReurn = function(){
@@ -65,6 +65,7 @@ WC.ajaxReurn = function(){
                 //no unread convos
                 WC.showElement("conversations-empty");
             }
+            WC.refreshCounter();
         }
         else if(WC.xmlhttp.status==401)
         {
@@ -79,14 +80,11 @@ WC.ajaxReurn = function(){
 };
 
 WC.hideAllElements = function(){
-    var ids = ["conversations","conversations-loading","conversations-error","conversations-empty","conversations-login"];
-    for(id in ids){
-        document.getElementById(ids[id]).classList.remove("is-visible");
-    }
+    $(".is-visible").removeClass("is-visible");
 }
 
 WC.showElement = function(elementID){
-    document.getElementById(elementID).classList.add("is-visible");
+    $("#"+elementID).addClass("is-visible");
 }
 
 
