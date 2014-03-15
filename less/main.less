@@ -26,7 +26,6 @@
   line-height: 1.0;
   font-size:1.25rem;
 }
-
 .chrome-popover-title{
   color:@wc-blue;
   font-weight: bold;
@@ -36,7 +35,21 @@
 #home-link{
   cursor:pointer;
 }
+
 /* Styles */
+
+.chrome-popover-content{
+  .abs-fill();
+  top:2.5rem;
+  .content{
+    display:none;
+    &.is-visible{
+      display:block;
+    }
+  }
+}
+
+.conversations
 
 #conversations-list {
   padding:0;
@@ -46,8 +59,6 @@
   overflow-x: hidden;
   overflow-y: auto;
   background-color: white;
-  .abs-fill();
-  top:2.5rem;
 }
 
 .conversation {
