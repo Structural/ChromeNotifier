@@ -3,7 +3,7 @@
 
   "name": "Watercooler",
   "description": "A Notifier For Watercooler",
-  "version": "1.0.7",
+  "version": "1.1.1",
   "icons": { "16": "logo-full.png",
            "48": "logo-full.png",
           "128": "logo-full.png" },
@@ -15,7 +15,7 @@
     "webNavigation"
   ],
   "background": {
-    "scripts": ["application.js","background.js"]
+    "scripts": ["jquery-2.1.0.min.js","application.js","background.js"]
   },
   "browser_action": {
     "default_icon": "logo-full.png",

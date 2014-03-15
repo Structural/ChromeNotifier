@@ -1,0 +1,63 @@
+@backgroundColor: #FFF;
+@textColor: #444;
+
+// TODO: Figure out what these mean semantically and rename them.
+// Colors pulled from https://kuler.adobe.com/#themeID/2173697 because it looked nice.
+@darkBlue: rgb(5, 59, 68);
+@lightBlue: rgb(225, 240, 255);
+@red: rgb(165, 53, 57);
+@orange: rgb(185, 84, 60);
+@yellow: rgb(234, 208, 117);
+
+@backgroundDarkColor: darken(@backgroundColor, 5%);
+@backgroundDarkerColor: darken(@backgroundColor, 10%);
+@backgroundDarkestColor: darken(@backgroundColor, 15%);
+
+@borderColor: darken(@backgroundColor, 30%);
+@borderDarkColor: @backgroundDarkestColor;
+
+@unreadColor: #ABC;
+
+@highlightColor: @lightBlue;
+
+@inputBorderColor: darken(@backgroundColor, 20%);
+@inputBackgroundColor: lighten(@backgroundColor, 20%);
+
+@toolbar-height:2.5rem;
+
+// Widths
+
+@app-min-width:50rem;
+
+/* Info Page Stuff */
+
+@info-content-width: 50rem;
+
+
+
+/* btn-faint is a modifer on buttons for how much the button is show when it is not being hovered */
+
+@btn-faint-color:rgba(0,0,0,0.05);
+@btn-faint-color-hover:#D8D8D8;
+@btn-faint-color-solid:#404040;
+
+
+@border-color-1:#E0E0E0;
+@border-1:1px solid @border-color-1;
+@bg-1:#F4F4F4;
+
+@border-color-2:#C8C8C8;
+@border-2:1px solid @border-color-2;
+@bg-2:#E8E8E8;
+
+@border-color-3:darken(@border-color-2,5%);
+@border-3:1px solid @border-color-3;
+@bg-3:darken(@bg-2,5%);
+
+/* Media Query Stuff */
+
+@bp-1: 600px;
+@bp-2: 1000px;
+
+
+

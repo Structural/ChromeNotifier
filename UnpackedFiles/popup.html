@@ -1,100 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <style>
-        /* btn-faint is a modifer on buttons for how much the button is show when it is not being hovered */
-/* Media Query Stuff */
-/* btn-faint is a modifer on buttons for how much the button is show when it is not being hovered */
-/* Media Query Stuff */
-.hidden {
-  display: none !important;
-}
-.clearfix {
-  *zoom: 1;
-}
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-.clearfix:after {
-  clear: both;
-}
-.pull-right {
-  float: right;
-}
-.pull-left {
-  float: left;
-}
-.border-bottom {
-  border-bottom: 1px solid #b3b3b3;
-}
-.border-top {
-  border-top: 1px solid #b3b3b3;
-}
-.border-right {
-  border-right: 1px solid #b3b3b3;
-}
-.border-left {
-  border-left: 1px solid #b3b3b3;
-}
 
-/* Search Results */
-.conversations {
-  padding: 0.35rem;
-  padding-top: 0;
-  max-width:300px; 
-}
-.conversations-list {
-  margin: 0;
-  padding: 0;
-  max-height: 30rem;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background-color: white;
-}
-.conversation {
-  padding: 0.25rem;
-  cursor: pointer;
-}
-.conversation:hover {
-  background-color: #FAFAFA;
-}
-.conversation-title {
-  font-family: Oswald, sans-serif;
-  font-size: 1rem;
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  word-wrap: break;
-  font-size: 0.9rem;
-}
-.footer{
-  text-align: center;
-  color:white;
-  background-color:#80a0c0;
-  bottom: 0px; 
-  cursor: pointer;
-  font-size: 20px;
-  padding: 10px 30px;
-  min-width: 200px;
-}
-        </style>
-    </head>
-    <body>
+<head>
+  <meta charset="utf-8">
+  <link href='http://fonts.googleapis.com/css?family=Lato|Oswald' rel='stylesheet' type='text/css'>
+  <link href="font-awesome.min.css" rel="stylesheet">
+  <link href="popup.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div class='chrome-popover'>
 
-<div class="conversations">
-  <ul class="conversations-list" id="conversations-list">
-  </ul>
+    <div class="chrome-popover-toolbar">
+      <span class="chrome-popover-title" id="home-link">Water Cooler</span>
+    </div>
 
-</div>
-<div class="footer" id="footer" onclick="goToInbox">
-  Go to Watercooler
-</div>
-    </body>
-     <script src="application.js"></script>
-      <script src="popup.js"></script>
+    <div class='chrome-popover-content'>
+      <div class="content conversations" id="conversations">
+        <ul id="conversations-list">
+        </ul>
+      </div>
+
+      <div class="info-message content is-visible" id="conversations-loading">
+        <i class='fa fa-fw fa-cog fa-spin info-message-icon'></i><span class="info-message-text">Loading...</span>
+      </div>
+
+      <div class="info-message content" id="conversations-error">
+        <i class='fa fa-fw fa-exclamation-circle info-message-icon'></i><span class="message-text">Rut Roh.  Something Broke.</span>
+      </div>
+
+      <div class="info-message content" id="conversations-login">
+        <i class='fa fa-fw fa-sign-in info-message-icon'></i><span class="message-text">Bro, do you even authenticate?</span>
+      </div>
+
+      <div class="info-message content" id="conversations-empty">
+        <i class='fa fa-fw fa-thumbs-o-up info-message-icon'></i><span class="info-message-text">No New Messages</span>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+<script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="application.js"></script>
+<script type="text/javascript" src="popup.js"></script>
 </html>
