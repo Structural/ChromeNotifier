@@ -39,6 +39,7 @@ WC.convoClick = function(e){
 WC.ajaxReurn = function(){
     if (WC.xmlhttp.readyState==4)
     {
+        document.getElementById("conversations-error").classList.remove("is-visible")
         if(WC.xmlhttp.status==200){
             var convoData = JSON.parse(WC.xmlhttp.response);
             if(convoData.length > 0)
