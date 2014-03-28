@@ -1,11 +1,10 @@
 
 
-
 WC.renderConversatiom = function(conversation){
     retVal = ""
     retVal += "<li class='conversation action-result' "
     retVal += " id='conversation-" + conversation.id + "'"
-    retVal += " convoUrl='" + "conversation/" + encodeURIComponent(conversation.title) + "/" + conversation.id + "'"
+    retVal += " convoUrl='" + "conversation/from-notifier/" + conversation.id + "'"
     retVal += ">"
     retVal += "<div class='conversation-title'>"
     retVal += conversation.title
