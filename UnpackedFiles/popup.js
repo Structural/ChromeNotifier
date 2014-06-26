@@ -1,11 +1,15 @@
 
-
+WC.slugify = function(s) {
+    return encodeURIComponent(s.toLowerCase()
+                               .replace(/[ _]/g, '-')
+                               .replace(/[^a-zA-Z0-9-]/g, ''));
+};
 
 WC.renderConversatiom = function(conversation){
     retVal = ""
     retVal += "<li class='conversation action-result' "
     retVal += " id='conversation-" + conversation.id + "'"
-    retVal += " convoUrl='" + "conversation/" + encodeURIComponent(conversation.title) + "/" + conversation.id + "'"
+    retVal += " convoUrl='" + "conversation/" + WC.slugify(conversation.title) + "/" + conversation.id + "'"
     retVal += ">"
     retVal += "<div class='conversation-title'>"
     retVal += conversation.title
