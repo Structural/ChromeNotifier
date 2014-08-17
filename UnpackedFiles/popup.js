@@ -31,6 +31,7 @@ WC.xmlhttp = new XMLHttpRequest();
 
 WC.run = function(){
     WC.hideAllElements();
+    WC.setStatusesClickable();
     WC.showElement("conversations-loading");
     WC.xmlhttp.onreadystatechange = WC.ajaxReurn;
     WC.xmlhttp.open("GET", WC.getWatercoolrUrl() + "api/v0/conversations/unread.json", true);
@@ -85,12 +86,17 @@ WC.ajaxReurn = function(){
 
 WC.hideAllElements = function(){
     $(".is-visible").removeClass("is-visible");
-}
+};
 
 WC.showElement = function(elementID){
     $("#"+elementID).addClass("is-visible");
-}
+};
 
+WC.setStatusesClickable = function(){
+    document.getElementById("conversations-error").addEventListener("click",function(){WC.goToInbox();});
+    document.getElementById("conversations-login").addEventListener("click",function(){WC.goToInbox();});
+    document.getElementById("conversations-empty").addEventListener("click",function(){WC.goToInbox();});
+};
 
 
 
