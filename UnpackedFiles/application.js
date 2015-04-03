@@ -1,7 +1,7 @@
 var WC = {};
 
 WC.getWatercoolrUrl = function () {
-  return "http://watercooler.io/";
+  return "http://water-cooler.herokuapp.com/";
 }
 
 WC.isWatercoolrUrl = function (url) {
@@ -51,7 +51,7 @@ WC.refreshCounter = function(){
 
             // JSON.parse does not evaluate the attacker's scripts.
             var resp = parseInt(xhr.responseText);
-           
+
             if(resp>0){
                 //Badge Background color is set to black
                 chrome.browserAction.setBadgeBackgroundColor({
